@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    align-items: center;
+    background: #ff742b;
+    height: auto;
+    padding: 4px;
+    position: relative;
+    justify-content: space-between;
+}
+
+.H_logo {
+    width: 48px;
+    margin-right: 8px;
+}
+
+.SearchHeader {
+    color: #000;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.SVG {
+    margin: 0 8px;
+    width: 24;
+    height: 24;
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+span {
+    color: #000;
+}

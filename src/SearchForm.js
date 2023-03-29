@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import image from './image.webp'
+import './SearchForm.css'
 
 /*
 Search by tag, date, author, title
@@ -14,10 +15,16 @@ function SearchForm(props) {
 
     return (
     <div>
-        <header>
+        <header className='header'>
             <img src={image}
             alt=''
-            style={{ width: '48px' }}/>
+            className='H_logo'
+            />
+            <div className='SearchHeader'>
+               Search
+                <br />
+                Hacker News
+            </div>
             <Box
             component="form"
             sx={{'& > :not(style)': { m: 1, width: '25ch' }}}
@@ -26,12 +33,19 @@ function SearchForm(props) {
             >
             </Box>
             <div>
-                <TextField 
+                <TextField
+                style={{ width: '100%' }}
                 id="outlined-basic" 
                 label="Search stories by title, url, or author" variant="outlined" 
                 value={query} 
                 type='text' 
                 onChange={e => setQuery(e.target.value)} />
+            </div>
+            <div>
+                {/* <svg 
+                xmlns='http://www.w3.org/2000/svg'
+                className='SVG'/> */}
+                <span>Settings</span>
             </div>
         </header>
         
