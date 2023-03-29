@@ -14,6 +14,7 @@ function App() {
   const[searches, setSearches] = useState([]);
   const[query, setQuery] = useState('')
   const[tags, setTags] = useState('')
+  const[points, setPoints] = useState('')
 
   useEffect(
     () => {
@@ -24,7 +25,7 @@ function App() {
         setSearches(results.data.hits)
       }
       fetchData()
-    }, [tags, query]
+    }, [tags, query, points]
   )
 
   const handlePopular = (e) => {

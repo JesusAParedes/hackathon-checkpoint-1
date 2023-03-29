@@ -1,4 +1,5 @@
 import React from 'react';
+import './DisplayArticleCard.css'
 const moment = require('moment')
 
 /* 
@@ -10,34 +11,35 @@ Make it beautiful!!!
 
 function DisplayArticleCard(props) {
     const{ search, index } = props;
+    let date = moment(search.created_at).format('MM-DD-YYYY')
     
     return (
-    <div>
-        <div>
+    <section className='data'>
+        <div className='title'>
             <p key={index}> 
-                <a href={search.title}>{search.title} 
+                <a href={search.url}>{search.title} 
                 </a>
-                <span>
+                <span className='url'>
                     ({search.url})
                 </span>
             </p>
         </div>
     
-        <div>
-                <span>
+        <article className='meta'>
+                <span className='separator'>
                     {search.points} points | 
                 </span>
                 <span>
-                    {search.author} |
+                   Author: {search.author} |
                 </span>
                 <span>
-                    {search.created_at} |
+                   Created: {date} |
                 </span>
                 <span>
                     {search.num_comments} comments
                 </span>
-        </div> 
-    </div>
+        </article> 
+    </section>
     )
 }
 
