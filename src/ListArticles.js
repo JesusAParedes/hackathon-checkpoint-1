@@ -15,14 +15,17 @@ function ListArticles(props) {
     */
 
     return (
-      filterDate.map((search,index) => (
+      
+      searches.map((search,index) => (
             <div>
               <DisplayArticleCard 
               search={search}
-              filterDate={filterDate} 
-              index={index}/>
+              index={index}
+              />
             </div>
-          )))  
+          )) 
+            
+          )
 }
 
 export default ListArticles

@@ -28,10 +28,10 @@ function DisplayArticleCard(props) {
     
         <article className='meta'>
                 <span className='separator'>
-                    {filterDate.points} points | 
+                    {search.points} points | 
                 </span>
                 <span>
-                   Author: {filterDate.author} |
+                   Author: {search.author} |
                 </span>
                 <span>
                    Created: {date} |
