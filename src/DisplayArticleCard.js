@@ -10,14 +10,15 @@ Make it beautiful!!!
 */
 
 function DisplayArticleCard(props) {
-    const{ search, index } = props;
+    const{ search, index, filterDate } = props;
     let date = moment(search.created_at).format('MM-DD-YYYY')
     
     return (
     <section className='data'>
         <div className='title'>
             <p key={index}> 
-                <a href={search.url}>{search.title} 
+                <a href={search.url}
+                target="_blank">{search.title} 
                 </a>
                 <span className='url'>
                     ({search.url})
@@ -27,10 +28,10 @@ function DisplayArticleCard(props) {
     
         <article className='meta'>
                 <span className='separator'>
-                    {search.points} points | 
+                    {filterDate.points} points | 
                 </span>
                 <span>
-                   Author: {search.author} |
+                   Author: {filterDate.author} |
                 </span>
                 <span>
                    Created: {date} |

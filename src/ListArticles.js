@@ -1,26 +1,28 @@
 import React from 'react';
 import DisplayArticleCard from './DisplayArticleCard';
+
 /* 
-Maps over props passed to it from App and pass props to DisplayArticleCard to render each card
 Make it beautiful
 **Bonus** Add sort to list most recent/alphabetical
 */
 
 function ListArticles(props) {
+    const{ searches, filterDate } = props;
 
-    const{ searches } = props;
+    /*
+    Maps over props passed to it from App &
+    Pass props to DisplayArticleCard to render each card
+    */
 
     return (
-        searches.map((search,index) => (
+      filterDate.map((search,index) => (
             <div>
               <DisplayArticleCard 
-              search={search} 
+              search={search}
+              filterDate={filterDate} 
               index={index}/>
             </div>
-          ))
-    ) 
-    
+          )))  
 }
-
 
 export default ListArticles
