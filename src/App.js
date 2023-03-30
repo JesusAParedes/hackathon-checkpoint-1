@@ -8,7 +8,7 @@ function App() {
   const [searches, setSearches] = useState([]);
   const [query, setQuery] = useState('')
   const [tags, setTags] = useState('')
-  const [filterDate, setFilterDate] = useState()
+  const [filterDate, setFilterDate] = useState([])
 
 
   //fetches data and holds it in state

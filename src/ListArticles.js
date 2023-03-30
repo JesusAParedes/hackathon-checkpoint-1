@@ -15,7 +15,7 @@ function ListArticles(props) {
     */
 
     return (
-      
+      filterDate === [] ?
       searches.map((search,index) => (
             <div>
               <DisplayArticleCard 
@@ -23,7 +23,14 @@ function ListArticles(props) {
               index={index}
               />
             </div>
-          )) 
+          )) : filterDate.map((search,index) => (
+            <div>
+              <DisplayArticleCard 
+              search={search}
+              index={index}
+              />
+            </div>
+          ))
             
           )
 }

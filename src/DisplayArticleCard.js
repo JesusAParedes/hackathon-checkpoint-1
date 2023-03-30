@@ -10,7 +10,7 @@ Make it beautiful!!!
 */
 
 function DisplayArticleCard(props) {
-    const{ search, index, filterDate } = props;
+    const{ search, index } = props;
     let date = moment(search.created_at).format('MM-DD-YYYY')
     
     return (
