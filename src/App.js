@@ -19,7 +19,7 @@ function App() {
   useEffect(
     () => {
      const fetchData = async () => {
-        const results = await axios(`http://hn.algolia.com/api/v1/search?query=${query}&tags=${tags}`)
+        const results = await axios(`https://hn.algolia.com/api/v1/search?query=${query}&tags=${tags}`)
         console.log(results.data);
         console.log(tags)
         setSearches(results.data.hits)
