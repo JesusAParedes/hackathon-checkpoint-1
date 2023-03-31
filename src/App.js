@@ -30,7 +30,7 @@ function App() {
         
       }
       fetchData()
-    }, [tags, query]
+    }, [tags, query, year, searches]
   )
 
 
