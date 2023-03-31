@@ -42,9 +42,6 @@ function SearchForm(props) {
                 onChange={e => setQuery(e.target.value)} />
             </div>
             <div>
-                {/* <svg 
-                xmlns='http://www.w3.org/2000/svg'
-                className='SVG'/> */}
                 <span>Settings</span>
             </div>
         </header>
@@ -55,18 +52,12 @@ function SearchForm(props) {
                 <option value=''>All</option>
                 <option value='story'>Story</option>
             </select>
-            {/* by
-            <select>
-                <option value='comment' onChange={handlePopular}>Popularity</option>
-                <option>Date</option>
-            </select> */}
             for
             <select onChange={onChange}>
-                <option value=''>All Time</option>
-                <option value='1'>Last 24h</option>
-                <option value='7'>Past Week</option>
-                <option value='30'>Past Month</option>
+                <option value='0'>All Time</option>
                 <option value='365'>Past Year</option>
+                <option value='730'>Last 2 Years</option>
+                <option value='1095'>Past 3 Years</option>
             </select>
         </form>
     </div>

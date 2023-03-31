@@ -8,7 +8,7 @@ function App() {
   const [searches, setSearches] = useState([]);
   const [query, setQuery] = useState('')
   const [tags, setTags] = useState('')
-  const [filterDate, setFilterDate] = useState([])
+  const [year, setYear] = useState(0)
 
 
   //fetches data and holds it in state
@@ -16,7 +16,18 @@ function App() {
     () => {
      const fetchData = async () => {
         const results = await axios(`https://hn.algolia.com/api/v1/search?query=${query}&tags=${tags}`)
-        setSearches(results.data.hits)
+
+       const object = results.data.hits.filter(result => {
+          if(year === 0) {
+            return result
+          } else
+          if ((Date.now() - year) < Date.parse(result.created_at)) {
+            return result
+          }
+        })
+
+        setSearches(object)
+        
       }
       fetchData()
     }, [tags, query]
@@ -24,29 +35,8 @@ function App() {
 
 
   const handleDate = (e) => {
-    const days = e.target.value;
-    const milliseconds = days * 24 * 60 * 60 * 1000;
-    console.log('milliseconds', milliseconds)
-    
-    console.log('right now', Date.now())
-    console.log(searches.map(search => {
-      return Date.parse(search.created_at)
-    }))
-
-    console.log(Date.now() - milliseconds)
-
-    const filteredDate = searches.filter(search => {
-      if(milliseconds === 0) {
-        return searches
-      }
-      if((Date.now() - milliseconds) < Date.parse(search.created_at)) {
-        return search
-      }
-    })
-
-    console.log(filteredDate)
-    setFilterDate(filteredDate)
-
+    const milliseconds = e.target.value * 24 * 60 * 60 * 1000;
+    setYear(milliseconds)
   }
 
  /*
@@ -63,7 +53,6 @@ function App() {
       />
       <ListArticles 
       searches={searches}
-      filterDate={filterDate}
        />
     </div>
   );

@@ -7,7 +7,7 @@ Make it beautiful
 */
 
 function ListArticles(props) {
-    const{ searches, filterDate } = props;
+    const{ searches } = props;
 
     /*
     Maps over props passed to it from App &
@@ -15,7 +15,6 @@ function ListArticles(props) {
     */
 
     return (
-      filterDate === [] ?
       searches.map((search,index) => (
             <div>
               <DisplayArticleCard 
@@ -23,15 +22,7 @@ function ListArticles(props) {
               index={index}
               />
             </div>
-          )) : filterDate.map((search,index) => (
-            <div>
-              <DisplayArticleCard 
-              search={search}
-              index={index}
-              />
-            </div>
           ))
-            
           )
 }
 
