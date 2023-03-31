@@ -52,12 +52,12 @@ function SearchForm(props) {
                 <option value=''>All</option>
                 <option value='story'>Story</option>
             </select>
-            for
+            from
             <select onChange={onChange}>
                 <option value='0'>All Time</option>
-                <option value='365'>Past Year</option>
+                <option value='365'>Last Year</option>
                 <option value='730'>Last 2 Years</option>
-                <option value='1095'>Past 3 Years</option>
+                <option value='1095'>Last 3 Years</option>
             </select>
         </form>
     </div>
